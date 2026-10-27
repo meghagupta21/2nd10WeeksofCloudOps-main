@@ -172,6 +172,22 @@ Verify the installation:
 docker buildx version
 ```
 
+or
+
+ARCH=$(uname -m)
+
+if [ "$ARCH" = "x86_64" ]; then
+  BUILDX_ARCH="amd64"
+elif [ "$ARCH" = "aarch64" ]; then
+  BUILDX_ARCH="arm64"
+else
+  echo "Unsupported architecture: $ARCH"
+  exit 1
+fi
+
+curl -fSL "https://github.com/docker/buildx/releases/latest/download/buildx-v0.33.0.linux-${BUILDX_ARCH}" \
+  -o /root/.docker/cli-plugins/docker-buildx
+
 ### 3.4 Install Docker Compose
 
 Install the standalone Docker Compose binary:
