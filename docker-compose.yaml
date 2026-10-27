@@ -20,9 +20,9 @@ services:
     ports:
       - "84:80"
     environment:
-      DB_HOST: "database-1.cs5euy4m6tvk.us-east-1.rds.amazonaws.com"
+      DB_HOST: "booksapp.cs5euy4m6tvk.us-east-1.rds.amazonaws.com"
       DB_USER: "admin"
-      DB_PASSWORD: "Megha2001"
+      DB_PASSWORD: "Megha123"
       DB_PORT: "3306"
       DB_NAME: "booksapp"
       APP_PORT: "80"
